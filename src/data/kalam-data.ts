@@ -312,10 +312,8 @@ export const ABUYA_PROFILE: AbuyaProfile = {
   honorificTitle: "Guru Mulia & Pendidik Ruhani",
   role: "Pengasuh & Pembina Majlis Keilmuan",
   institution: "Majlis & Pondok Pesantren [Nama Lembaga/Institusi]",
-  portraitImage:
-    "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80&w=1000",
-  heroImage:
-    "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=1200",
+  portraitImage: "/images/abuya-hero.jpg",
+  heroImage: "/images/hero-banner.jpg",
   shortBio:
     "Sosok ulama pendidik yang mengabdikan hidup untuk membimbing umat dengan keteduhan akhlak, kedalaman ilmu bersanad, dan kepedulian tulus terhadap keharmonisan masyarakat.",
   fullBio: [

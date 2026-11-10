@@ -42,7 +42,7 @@ export const ProfilAbuya: React.FC = () => {
                     src={ABUYA_PROFILE.portraitImage}
                     alt="Potret Abuya"
                     fill
-                    className="object-cover filter contrast-[1.04] brightness-95"
+                    className="object-cover object-[65%_20%] contrast-[1.02]"
                     sizes="(max-width: 1024px) 100vw, 40vw"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-forest-950/80 via-transparent to-transparent" />

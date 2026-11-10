@@ -93,15 +93,15 @@ export const Hero: React.FC = () => {
                 {/* Image */}
                 <Image
                   src={ABUYA_PROFILE.portraitImage}
-                  alt="Potret Abuya dalam Majlis"
+                  alt="Potret Abuya"
                   fill
                   priority
-                  className="object-cover object-center filter grayscale contrast-[1.05] brightness-95 hover:filter-none transition-all duration-700"
+                  className="object-cover object-[65%_20%] contrast-[1.02] hover:scale-[1.02] transition-all duration-700"
                   sizes="(max-width: 768px) 100vw, 40vw"
                 />
 
                 {/* Subtle Gradient Shade at bottom for caption legibility */}
-                <div className="absolute inset-0 bg-gradient-to-t from-forest-950/90 via-forest-950/20 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-forest-950/85 via-forest-950/15 to-transparent pointer-events-none" />
 
                 {/* Overlaid Caption */}
                 <div className="absolute bottom-0 inset-x-0 p-5 sm:p-6 text-ivory">
