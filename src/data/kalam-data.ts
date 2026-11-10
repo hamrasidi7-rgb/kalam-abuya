@@ -392,3 +392,7 @@ export const NAV_LINKS = [
   { label: "Hikmah", href: "#hikmah" },
   { label: "Profil Abuya", href: "#profil-abuya" },
 ];
+
+export type { SocialMediaChannel } from "@/components/KanalMedsos";
+export { DEFAULT_MEDSOS_CHANNELS } from "@/components/KanalMedsos";
+

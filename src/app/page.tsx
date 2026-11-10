@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
+import { KanalMedsos } from "@/components/KanalMedsos";
 import { TemaKehidupan } from "@/components/TemaKehidupan";
 import { KalamTerbaru } from "@/components/KalamTerbaru";
 import { VideoKalam } from "@/components/VideoKalam";
@@ -31,7 +32,10 @@ export default function Home() {
         {/* 1. Hero Section */}
         <Hero />
 
-        {/* 2. Tema Kehidupan (6 Categories: Akhlak, Keluarga, Ilmu, Ibadah, Kepemimpinan, Kemasyarakatan) */}
+        {/* 2. Kanal Medsos Kalam Abuya */}
+        <KanalMedsos />
+
+        {/* 3. Tema Kehidupan (6 Categories: Akhlak, Keluarga, Ilmu, Ibadah, Kepemimpinan, Kemasyarakatan) */}
         <TemaKehidupan />
 
         {/* 4. Kalam Terbaru (Article Grid) */}
