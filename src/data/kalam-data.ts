@@ -313,7 +313,7 @@ export const ABUYA_PROFILE: AbuyaProfile = {
   role: "Pengasuh & Pembina Majlis Keilmuan",
   institution: "Majlis & Pondok Pesantren [Nama Lembaga/Institusi]",
   portraitImage: "/images/abuya-hero.jpg",
-  heroImage: "/images/hero-banner.jpg",
+  heroImage: "/images/hero-kalam-abuya.png",
   shortBio:
     "Sosok ulama pendidik yang mengabdikan hidup untuk membimbing umat dengan keteduhan akhlak, kedalaman ilmu bersanad, dan kepedulian tulus terhadap keharmonisan masyarakat.",
   fullBio: [
