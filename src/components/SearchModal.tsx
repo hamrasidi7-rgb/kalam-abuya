@@ -131,7 +131,7 @@ export const SearchModal: React.FC<SearchModalProps> = ({ isOpen, onClose }) => 
                 {filteredQuotes.slice(0, 3).map((q) => (
                   <a
                     key={q.id}
-                    href="#kalam-pilihan"
+                    href="#kalam-terbaru"
                     onClick={onClose}
                     className="block p-3 border border-forest/10 hover:border-gold/50 bg-white/50 hover:bg-white transition-all group"
                   >

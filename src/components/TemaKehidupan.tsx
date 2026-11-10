@@ -97,7 +97,7 @@ export const TemaKehidupan: React.FC<TemaKehidupanProps> = ({ onSelectCategory }
             </p>
           </div>
           <a
-            href="#kalam-pilihan"
+            href="#kalam-terbaru"
             className="text-xs uppercase tracking-editorial font-sans text-forest hover:text-gold font-medium flex items-center gap-1 border-b border-forest/30 pb-0.5"
           >
             <span>Telusuri Arsip Terkini</span>
