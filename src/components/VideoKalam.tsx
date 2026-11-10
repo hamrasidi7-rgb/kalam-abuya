@@ -10,125 +10,109 @@ export const VideoKalam: React.FC = () => {
 
   return (
     <>
-      <section id="video-kalam" className="py-16 sm:py-24 bg-ivory border-b border-gold/25 relative">
+      <section id="video-kalam" className="py-14 sm:py-20 bg-[#F8F5EF] border-b border-[#E9E1D5] relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           {/* Section Header */}
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 sm:mb-16 border-b border-gold/30 pb-6">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 sm:mb-14 border-b border-[#E9E1D5] pb-5">
             <div>
               <div className="flex items-center gap-2 mb-2">
-                <span className="w-6 h-[1px] bg-gold" />
-                <span className="font-sans text-[11px] uppercase tracking-ultraWide text-gold-dark font-medium">
+                <span className="w-6 h-[1px] bg-[#B99A62]" />
+                <span className="font-sans text-[10.5px] uppercase tracking-[0.2em] text-[#B99A62] font-semibold">
                   Dokumentasi Audiovisual
                 </span>
               </div>
-              <h2 className="font-serif text-3xl sm:text-4xl text-forest font-normal">
-                Video Kalam & Rekaman Majlis
+              <h2 className="font-editorial text-2xl sm:text-3xl md:text-4xl text-[#701D2C] font-bold tracking-tight">
+                Video Kalam &amp; Rekaman Majlis
               </h2>
-              <p className="font-sans text-sm text-charcoal/80 mt-2 font-light max-w-xl">
-                Arsip rekaman ceramah, bimbingan ruhani, dan kutipan audio-visual petuah Abuya yang didokumentasikan dalam kualitas prima.
+              <p className="font-reading text-sm text-[#5E574E] mt-2 max-w-xl leading-relaxed">
+                Arsip rekaman ta&apos;lim, bimbingan ruhani, dan petuah Abuya yang didokumentasikan dalam format audiovisual.
               </p>
             </div>
 
-            <div className="mt-6 md:mt-0">
+            <div className="mt-5 md:mt-0">
               <a
-                href="https://youtube.com"
+                href="https://www.youtube.com/@ponpesalkarimiyyah"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2.5 bg-forest text-ivory text-xs uppercase tracking-editorial font-medium hover:bg-forest-900 border border-forest transition-colors shadow-sm"
+                className="inline-flex items-center gap-2 px-4 py-2.5 bg-[#701D2C] text-[#F8F5EF] text-xs uppercase tracking-wider font-semibold hover:bg-[#551521] border border-[#701D2C] rounded-sm transition-colors shadow-sm"
               >
-                <Youtube className="w-4 h-4 text-gold-light" />
+                <Youtube className="w-4 h-4 text-[#B99A62]" />
                 <span>Kanal YouTube Resmi</span>
               </a>
             </div>
           </div>
 
           {/* Video Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
             {VIDEOS_DATA.map((video) => (
               <div
                 key={video.id}
-                className="bg-ivory border border-gold/30 overflow-hidden hover:border-gold hover:shadow-card transition-all duration-300 flex flex-col justify-between group"
+                className="bg-white border border-[#E9E1D5] rounded-sm overflow-hidden hover:border-[#701D2C] transition-all duration-300 flex flex-col justify-between group"
               >
                 <div>
-                  {/* Thumbnail Container */}
+                  {/* Thumbnail Container with Play Trigger */}
                   <div
                     onClick={() => setActiveVideo(video)}
-                    className="relative aspect-video w-full overflow-hidden bg-forest-950 cursor-pointer"
+                    className="relative aspect-video w-full overflow-hidden bg-[#292622] cursor-pointer"
                   >
                     <Image
                       src={video.thumbnail}
                       alt={video.title}
                       fill
-                      className="object-cover filter contrast-[1.05] brightness-90 group-hover:scale-105 group-hover:brightness-100 transition-all duration-500"
+                      className="object-cover group-hover:scale-105 transition-transform duration-500 opacity-90 group-hover:opacity-100"
                       sizes="(max-width: 768px) 100vw, 33vw"
                     />
 
-                    {/* Dark gradient */}
-                    <div className="absolute inset-0 bg-forest-950/30 group-hover:bg-forest-950/15 transition-colors" />
+                    {/* Dark gradient overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
 
-                    {/* Play Button Overlay */}
+                    {/* Play Button Icon */}
                     <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="w-13 h-13 rounded-full bg-ivory/90 text-forest flex items-center justify-center shadow-lg border border-gold group-hover:scale-110 group-hover:bg-forest group-hover:text-ivory transition-all duration-300">
-                        <Play className="w-5 h-5 ml-0.5 fill-current" />
+                      <div className="w-12 h-12 rounded-full bg-[#701D2C] text-white flex items-center justify-center shadow-md transform group-hover:scale-110 transition-transform duration-300">
+                        <Play className="w-5 h-5 ml-0.5 fill-current text-[#F8F5EF]" />
                       </div>
                     </div>
 
-                    {/* Duration badge */}
-                    <div className="absolute bottom-3 right-3 bg-forest-950/90 text-ivory text-[10px] tracking-wide font-sans px-2 py-0.5 border border-gold/30">
-                      {video.duration}
+                    {/* Duration Badge */}
+                    <div className="absolute bottom-3 right-3 bg-black/80 text-white font-mono text-[11px] px-2 py-0.5 rounded flex items-center gap-1">
+                      <Clock className="w-3 h-3 text-[#B99A62]" />
+                      <span>{video.duration}</span>
                     </div>
 
-                    {/* Category pill */}
-                    <div className="absolute top-3 left-3 bg-ivory/95 text-forest text-[10px] tracking-editorial uppercase px-2.5 py-0.5 font-medium font-sans border border-gold/30">
+                    {/* Category Badge */}
+                    <div className="absolute top-3 left-3 bg-[#F8F5EF]/95 text-[#701D2C] text-[10px] tracking-wider uppercase px-2.5 py-0.5 font-semibold font-sans border border-[#E9E1D5]">
                       {video.category}
                     </div>
                   </div>
 
-                  {/* Video Metadata & Content */}
-                  <div className="p-6">
-                    <div className="flex items-center gap-2 text-[11px] text-charcoal-muted font-sans mb-2">
-                      <span>{video.publishedAt}</span>
-                      <span>•</span>
-                      <span className="text-gold-dark font-medium">{video.speaker}</span>
-                    </div>
-
+                  {/* Video Meta Info */}
+                  <div className="p-5">
                     <h3
                       onClick={() => setActiveVideo(video)}
-                      className="font-serif text-lg text-forest font-medium leading-snug group-hover:text-forest-700 transition-colors cursor-pointer"
+                      className="font-editorial text-lg text-[#292622] font-bold leading-snug group-hover:text-[#701D2C] transition-colors cursor-pointer"
                     >
                       {video.title}
                     </h3>
-
-                    <p className="font-sans text-xs sm:text-sm text-charcoal/75 font-light leading-relaxed mt-2.5 line-clamp-2">
+                    <p className="font-reading text-xs text-[#5E574E] mt-2 line-clamp-2 leading-relaxed">
                       {video.summary}
                     </p>
                   </div>
                 </div>
 
-                {/* Video Card Footer */}
-                <div className="p-6 pt-0 border-t border-gold/15 mt-3 flex items-center justify-between">
-                  <span className="text-xs font-sans text-charcoal-muted flex items-center gap-1">
-                    <Clock className="w-3.5 h-3.5 text-gold-dark" />
-                    <span>{video.duration}</span>
-                  </span>
-
+                {/* Footer Video Card */}
+                <div className="px-5 pb-5 pt-3 border-t border-[#E9E1D5]/70 flex items-center justify-between text-xs font-sans text-[#7C746A]">
+                  <span>{video.publishedAt}</span>
                   <button
                     onClick={() => setActiveVideo(video)}
-                    className="text-xs font-sans uppercase tracking-editorial text-forest hover:text-gold-dark font-medium transition-colors"
+                    className="inline-flex items-center gap-1 text-[#701D2C] hover:text-[#551521] font-semibold uppercase tracking-wider"
                   >
-                    Putar Rekaman &rarr;
+                    <span>Tonton</span>
+                    <ExternalLink className="w-3 h-3 text-[#B99A62]" />
                   </button>
                 </div>
               </div>
             ))}
-          </div>
-
-          {/* Subnote */}
-          <div className="mt-12 text-center">
-            <p className="font-serif text-xs sm:text-sm italic text-charcoal-muted">
-              Seluruh rekaman video diproduksi dengan izin resmi tim dokumentasi untuk kepentingan syiar kebaikan.
-            </p>
           </div>
 
         </div>
@@ -136,79 +120,58 @@ export const VideoKalam: React.FC = () => {
 
       {/* Video Modal Player */}
       {activeVideo && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-forest-950/80 backdrop-blur-sm animate-fadeIn">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#292622]/70 backdrop-blur-xs animate-fadeIn">
           <div
             className="fixed inset-0"
             onClick={() => setActiveVideo(null)}
             aria-hidden="true"
           />
 
-          <div className="relative w-full max-w-4xl bg-ivory border border-gold overflow-hidden shadow-2xl z-10 flex flex-col max-h-[92vh]">
-            
+          <div className="relative w-full max-w-4xl bg-[#F8F5EF] border border-[#E9E1D5] rounded-sm overflow-hidden shadow-2xl z-10 flex flex-col">
             {/* Modal Header */}
-            <div className="p-4 sm:p-5 border-b border-gold/30 bg-ivory-light flex items-center justify-between">
-              <div>
-                <span className="text-[10px] font-sans uppercase tracking-ultraWide text-gold-dark font-medium">
-                  Pemutar Rekaman Majlis
-                </span>
-                <h3 className="font-serif text-lg sm:text-xl text-forest font-medium line-clamp-1">
-                  {activeVideo.title}
-                </h3>
-              </div>
+            <div className="flex items-center justify-between px-5 py-3.5 border-b border-[#E9E1D5] bg-[#F8F5EF]">
+              <span className="text-xs font-sans uppercase tracking-wider text-[#B99A62] font-semibold">
+                Kajian Audiovisual &bull; {activeVideo.category}
+              </span>
               <button
                 onClick={() => setActiveVideo(null)}
-                className="p-1.5 text-charcoal hover:text-forest border border-forest/20 hover:border-gold transition-colors ml-4"
-                aria-label="Tutup pemutar video"
+                className="p-1.5 text-[#292622] hover:text-[#701D2C] border border-[#E9E1D5] rounded-xs hover:border-[#701D2C] transition-colors"
+                aria-label="Tutup video"
               >
-                <X className="w-5 h-5" />
+                <X className="w-4 h-4" />
               </button>
             </div>
 
-            {/* Video Viewport / Clean Mock Player Container */}
-            <div className="relative aspect-video w-full bg-forest-950 flex items-center justify-center">
-              <Image
-                src={activeVideo.thumbnail}
-                alt={activeVideo.title}
-                fill
-                className="object-cover opacity-40"
+            {/* Video Player Embed / Mock Iframe */}
+            <div className="relative aspect-video w-full bg-black">
+              <iframe
+                src={`https://www.youtube.com/embed/${activeVideo.youtubeId}?autoplay=1`}
+                title={activeVideo.title}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="w-full h-full border-0"
               />
-              <div className="relative z-10 text-center p-6 max-w-md">
-                <div className="w-16 h-16 rounded-full bg-gold/90 text-forest mx-auto flex items-center justify-center shadow-xl mb-4">
-                  <Play className="w-7 h-7 ml-1 fill-current" />
-                </div>
-                <p className="font-serif text-lg text-ivory mb-2">
-                  Tayangan Tersedia di Kanal Resmi
-                </p>
-                <p className="font-sans text-xs text-ivory/80 font-light mb-5">
-                  Untuk kualitas audio dan video tanpa kompresi, Anda dapat menyimak langsung melalui YouTube resmi Kalam Abuya.
-                </p>
-                <a
-                  href="https://youtube.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-5 py-2.5 bg-forest text-ivory text-xs uppercase tracking-editorial font-medium border border-gold hover:bg-forest-900 transition-colors"
-                >
-                  <Youtube className="w-4 h-4 text-gold" />
-                  <span>Buka di YouTube</span>
-                  <ExternalLink className="w-3.5 h-3.5 ml-1" />
-                </a>
-              </div>
             </div>
 
-            {/* Modal Body / Notes */}
-            <div className="p-6 bg-ivory space-y-3">
-              <div className="flex items-center justify-between text-xs text-charcoal-muted font-sans border-b border-gold/20 pb-3">
-                <span>Durasi: {activeVideo.duration} • {activeVideo.category}</span>
-                <span className="text-forest font-medium">{activeVideo.speaker}</span>
-              </div>
-              <p className="font-sans text-sm text-charcoal/85 leading-relaxed font-light">
+            {/* Video Details */}
+            <div className="p-5 sm:p-6 bg-[#F8F5EF]">
+              <h3 className="font-editorial text-xl sm:text-2xl text-[#701D2C] font-bold">
+                {activeVideo.title}
+              </h3>
+              <p className="font-reading text-sm text-[#5E574E] mt-2 leading-relaxed">
                 {activeVideo.summary}
               </p>
+              <div className="mt-4 flex items-center gap-4 text-xs font-sans text-[#7C746A]">
+                <span>Durasi: {activeVideo.duration}</span>
+                <span>&bull;</span>
+                <span>Diterbitkan: {activeVideo.publishedAt}</span>
+              </div>
             </div>
-
           </div>
         </div>
       )}
     </>
   );
 };
+
+export default VideoKalam;

@@ -1,8 +1,9 @@
 "use client";
 
 import React from "react";
-import { ArrowUp, Heart, Sparkles } from "lucide-react";
+import { ArrowUp } from "lucide-react";
 import { NAV_LINKS, CATEGORIES_DATA, SITE_METADATA } from "@/data/kalam-data";
+import { KalamAbuyaLogo } from "./Header";
 
 export const Footer: React.FC = () => {
   const scrollToTop = () => {
@@ -10,46 +11,47 @@ export const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="bg-forest-950 text-ivory border-t border-forest-800">
+    <footer className="bg-[#211E1B] text-[#F8F5EF] border-t border-[#38332E]">
       {/* Top Editorial Row */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-12 border-b border-forest-800/80">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-14 sm:pt-16 pb-10 border-b border-[#38332E]/80">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-12">
           
           {/* Identity Column (5 cols) */}
           <div className="lg:col-span-5 space-y-4">
-            <div className="flex items-center gap-2">
-              <span className="w-2.5 h-2.5 rounded-full bg-gold" />
-              <span className="font-serif text-2xl tracking-[0.16em] text-ivory font-medium">
-                KALAM ABUYA
-              </span>
+            <div className="flex items-center gap-3">
+              <KalamAbuyaLogo className="w-8 h-8" />
+              <div className="flex flex-col text-left">
+                <span className="font-editorial text-xl sm:text-2xl font-bold tracking-[0.16em] text-[#F8F5EF]">
+                  KALAM ABUYA
+                </span>
+                <span className="font-sans text-[8.5px] uppercase tracking-[0.22em] text-[#B99A62] font-semibold">
+                  Ruang Pemikiran &amp; Hikmah
+                </span>
+              </div>
             </div>
-            
-            <p className="font-sans text-xs tracking-wideEditorial uppercase text-gold">
-              Dokumentasi & Arsip Hikmah Islam
-            </p>
 
-            <p className="font-sans text-xs sm:text-sm text-ivory/70 font-light leading-relaxed max-w-sm">
+            <p className="font-reading text-xs sm:text-sm text-[#F8F5EF]/70 leading-relaxed max-w-sm">
               {SITE_METADATA.editorialStatement}
             </p>
 
             <div className="pt-2">
-              <span className="inline-block px-3 py-1 bg-forest-900 border border-gold/30 text-gold-light text-[11px] font-sans">
+              <span className="inline-block px-3 py-1 bg-[#2C2723] border border-[#B99A62]/30 text-[#D8C496] text-[11px] font-sans rounded-xs">
                 {SITE_METADATA.currentIssue}
               </span>
             </div>
           </div>
 
-          {/* Quick Navigation (2 cols) */}
-          <div className="lg:col-span-2 space-y-4">
-            <h4 className="font-sans text-xs uppercase tracking-ultraWide text-gold font-medium">
-              Navigasi
+          {/* Quick Navigation (3 cols) */}
+          <div className="lg:col-span-3 space-y-3.5">
+            <h4 className="font-sans text-xs uppercase tracking-[0.2em] text-[#B99A62] font-semibold">
+              Navigasi Risalah
             </h4>
-            <ul className="space-y-2.5 text-xs font-sans">
+            <ul className="space-y-2 text-xs font-sans">
               {NAV_LINKS.map((link) => (
                 <li key={link.label}>
                   <a
                     href={link.href}
-                    className="text-ivory/75 hover:text-gold transition-colors inline-block"
+                    className="text-[#F8F5EF]/75 hover:text-[#B99A62] transition-colors inline-block"
                   >
                     {link.label}
                   </a>
@@ -58,60 +60,46 @@ export const Footer: React.FC = () => {
             </ul>
           </div>
 
-          {/* Categories / Tema Kehidupan (3 cols) */}
-          <div className="lg:col-span-3 space-y-4">
-            <h4 className="font-sans text-xs uppercase tracking-ultraWide text-gold font-medium">
-              Tema Kehidupan
+          {/* Topic Pillars (4 cols) */}
+          <div className="lg:col-span-4 space-y-3.5">
+            <h4 className="font-sans text-xs uppercase tracking-[0.2em] text-[#B99A62] font-semibold">
+              Tema Pokok
             </h4>
-            <ul className="grid grid-cols-2 gap-2 text-xs font-sans">
+            <div className="grid grid-cols-2 gap-2 text-xs font-sans">
               {CATEGORIES_DATA.map((cat) => (
-                <li key={cat.id}>
-                  <a
-                    href="#tema-kehidupan"
-                    className="text-ivory/75 hover:text-gold transition-colors block"
-                  >
-                    {cat.name}
-                  </a>
-                </li>
+                <a
+                  key={cat.id}
+                  href="#tema-kehidupan"
+                  className="text-[#F8F5EF]/75 hover:text-[#B99A62] transition-colors truncate"
+                >
+                  {cat.name}
+                </a>
               ))}
-            </ul>
-          </div>
-
-          {/* Khidmah & Back to top (2 cols) */}
-          <div className="lg:col-span-2 flex flex-col justify-between">
-            <div className="space-y-3">
-              <h4 className="font-sans text-xs uppercase tracking-ultraWide text-gold font-medium">
-                Khidmah
-              </h4>
-              <p className="text-xs text-ivory/65 font-light leading-relaxed">
-                Dipersembahkan untuk umat dengan niat tulus menyebarkan teladan kebaikan.
-              </p>
-            </div>
-
-            <div className="pt-6">
-              <button
-                onClick={scrollToTop}
-                className="w-full flex items-center justify-between px-3.5 py-2.5 border border-gold/40 hover:border-gold bg-forest-900/60 hover:bg-forest-900 text-xs font-sans text-gold-light transition-all"
-                aria-label="Kembali ke atas halaman"
-              >
-                <span>Kembali ke Atas</span>
-                <ArrowUp className="w-4 h-4" />
-              </button>
             </div>
           </div>
 
         </div>
       </div>
 
-      {/* Bottom Copyright & Disclaimer */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 text-xs text-ivory/60 flex flex-col sm:flex-row items-center justify-between gap-4 font-sans">
-        <p className="text-center sm:text-left">
-          &copy; {new Date().getFullYear()} KALAM ABUYA. Seluruh hak cipta dilindungi undang-undang dan adab syiar keilmuan.
-        </p>
-        <p className="text-gold-light/80 text-center sm:text-right text-[11px]">
-          Dikelola oleh Tim Khidmah & Dokumentasi Kalam Abuya
-        </p>
+      {/* Bottom Legal & Colophon Row */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-sans text-[#F8F5EF]/55">
+        <div>
+          <span>&copy; {new Date().getFullYear()} Kalam Abuya</span>
+          <span className="mx-2">&bull;</span>
+          <span>Dikelola dengan khidmah &amp; amanah dakwah.</span>
+        </div>
+
+        <button
+          onClick={scrollToTop}
+          className="inline-flex items-center gap-1.5 text-xs text-[#D8C496] hover:text-[#F8F5EF] transition-colors uppercase tracking-wider"
+          aria-label="Kembali ke atas halaman"
+        >
+          <span>Kembali ke Atas</span>
+          <ArrowUp className="w-3.5 h-3.5" />
+        </button>
       </div>
     </footer>
   );
 };
+
+export default Footer;

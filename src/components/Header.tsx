@@ -39,7 +39,7 @@ export const RISALAH_ITEMS: RisalahMenuItem[] = [
 
 /**
  * Komponen Monogram KA dalam bingkai segi delapan Islami (Rub el Hizb)
- * berpadu lengkungan mihrab tipis dan aksen emas.
+ * berpadu lengkungan mihrab tipis dan aksen Antique Gold.
  */
 export const KalamAbuyaLogo: React.FC<{ className?: string }> = ({
   className = "w-10 h-10 sm:w-11 sm:h-11",
@@ -52,8 +52,8 @@ export const KalamAbuyaLogo: React.FC<{ className?: string }> = ({
       className={`${className} shrink-0`}
       aria-hidden="true"
     >
-      {/* Latar Belakang Lembut */}
-      <rect x="2" y="2" width="44" height="44" rx="6" fill="#FAF8F5" />
+      {/* Latar Belakang Lembut Warm Ivory */}
+      <rect x="2" y="2" width="44" height="44" rx="6" fill="#F8F5EF" />
 
       {/* Bingkai Segi Delapan Islami (Rub el Hizb) - Persegi 1 */}
       <rect
@@ -62,11 +62,11 @@ export const KalamAbuyaLogo: React.FC<{ className?: string }> = ({
         width="29"
         height="29"
         rx="2"
-        stroke="#C5A059"
+        stroke="#B99A62"
         strokeWidth="1.25"
         strokeLinecap="round"
         strokeLinejoin="round"
-        className="transition-colors duration-300 group-hover:stroke-[#6B1724]"
+        className="transition-colors duration-300 group-hover:stroke-[#701D2C]"
       />
 
       {/* Bingkai Segi Delapan Islami (Rub el Hizb) - Persegi 2 (Rotasi 45 Derajat) */}
@@ -77,11 +77,11 @@ export const KalamAbuyaLogo: React.FC<{ className?: string }> = ({
         height="29"
         rx="2"
         transform="rotate(45 24 24)"
-        stroke="#C5A059"
+        stroke="#B99A62"
         strokeWidth="1.25"
         strokeLinecap="round"
         strokeLinejoin="round"
-        className="transition-colors duration-300 group-hover:stroke-[#6B1724]"
+        className="transition-colors duration-300 group-hover:stroke-[#701D2C]"
       />
 
       {/* Lingkaran Konsentris Geometri Dalam */}
@@ -89,27 +89,27 @@ export const KalamAbuyaLogo: React.FC<{ className?: string }> = ({
         cx="24"
         cy="24"
         r="13.5"
-        stroke="#EADBCE"
+        stroke="#E9E1D5"
         strokeWidth="0.85"
         strokeDasharray="2 2"
-        fill="#6B1724"
+        fill="#701D2C"
         fillOpacity="0.03"
       />
 
       {/* Kontur Lengkungan Mihrab Halus */}
       <path
         d="M 16 34.5 V 24.5 C 16 20.2 24 17.5 24 13.5 C 24 17.5 32 20.2 32 24.5 V 34.5"
-        stroke="#C5A059"
+        stroke="#B99A62"
         strokeWidth="0.85"
         strokeLinecap="round"
         fill="none"
       />
 
       {/* Aksen Titik Emas pada Sumbu Mata Angin */}
-      <circle cx="24" cy="5" r="1.2" fill="#C5A059" />
-      <circle cx="24" cy="43" r="1.2" fill="#C5A059" />
-      <circle cx="5" cy="24" r="1.2" fill="#C5A059" />
-      <circle cx="43" cy="24" r="1.2" fill="#C5A059" />
+      <circle cx="24" cy="5" r="1.2" fill="#B99A62" />
+      <circle cx="24" cy="43" r="1.2" fill="#B99A62" />
+      <circle cx="5" cy="24" r="1.2" fill="#B99A62" />
+      <circle cx="43" cy="24" r="1.2" fill="#B99A62" />
 
       {/* Inisial Monogram "KA" di Tengah */}
       <text
@@ -117,7 +117,7 @@ export const KalamAbuyaLogo: React.FC<{ className?: string }> = ({
         y="27.8"
         textAnchor="middle"
         dominantBaseline="central"
-        fill="#6B1724"
+        fill="#701D2C"
         fontFamily="'Cormorant Garamond', 'Cinzel', Georgia, serif"
         fontWeight="700"
         fontSize="13.5"
@@ -144,10 +144,10 @@ export const Header: React.FC<HeaderProps> = ({ onOpenSearch }) => {
   const dropdownRef = useRef<HTMLLIElement>(null);
   const dropdownTimerRef = useRef<NodeJS.Timeout | null>(null);
 
-  // Deteksi status scroll untuk backdrop-blur & bayangan tipis
+  // Deteksi status scroll untuk backdrop-blur & bayangan sangat tipis
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      setIsScrolled(window.scrollY > 15);
     };
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
@@ -191,7 +191,6 @@ export const Header: React.FC<HeaderProps> = ({ onOpenSearch }) => {
     };
   }, []);
 
-  // Helper hover dropdown dengan debounce halus agar tidak flickering
   const handleMouseEnter = () => {
     if (dropdownTimerRef.current) {
       clearTimeout(dropdownTimerRef.current);
@@ -207,15 +206,15 @@ export const Header: React.FC<HeaderProps> = ({ onOpenSearch }) => {
 
   return (
     <header
-      className={`sticky top-0 z-50 h-[76px] sm:h-[82px] bg-[#FAF8F5] border-b border-[#EADBCE] transition-all duration-300 ${
+      className={`sticky top-0 z-50 h-[68px] sm:h-[72px] md:h-[76px] bg-[#F8F5EF] border-b border-[#E9E1D5] transition-all duration-300 ${
         isScrolled
-          ? "bg-[#FAF8F5]/95 backdrop-blur-md shadow-[0_4px_20px_-2px_rgba(107,23,36,0.04)]"
+          ? "bg-[#F8F5EF]/98 backdrop-blur-md shadow-[0_2px_12px_-2px_rgba(41,38,34,0.06)]"
           : ""
       }`}
     >
       <div className="max-w-7xl mx-auto h-full px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         {/* ========================================================= */}
-        {/* SISI KIRI: Brand Logo & Tagline                           */}
+        {/* SISI KIRI: Brand Logo & Wordmark                          */}
         {/* ========================================================= */}
         <a
           href="#beranda"
@@ -225,15 +224,15 @@ export const Header: React.FC<HeaderProps> = ({ onOpenSearch }) => {
         >
           {/* Monogram KA Rub el Hizb */}
           <div className="relative p-0.5 transition-transform duration-300 group-hover:scale-105">
-            <KalamAbuyaLogo />
+            <KalamAbuyaLogo className="w-9 h-9 sm:w-10 sm:h-10" />
           </div>
 
-          {/* Tipografi Editorial Brand */}
+          {/* Wordmark KALAM ABUYA Diperkuat Ukuran & Keterbacaannya */}
           <div className="flex flex-col text-left">
-            <span className="font-serif text-[19px] sm:text-[22px] font-bold tracking-[0.16em] uppercase text-[#6B1724] group-hover:text-[#821D2D] transition-colors leading-tight">
+            <span className="font-editorial text-[20px] sm:text-[23px] font-bold tracking-[0.16em] uppercase text-[#701D2C] group-hover:text-[#8B2437] transition-colors leading-none">
               KALAM ABUYA
             </span>
-            <span className="font-sans text-[9px] sm:text-[9.5px] uppercase tracking-[0.22em] text-[#7C746A] font-medium leading-none mt-1">
+            <span className="font-sans text-[8.5px] sm:text-[9.5px] uppercase tracking-[0.22em] text-[#7C746A] font-medium leading-none mt-1">
               RUANG PEMIKIRAN &amp; HIKMAH
             </span>
           </div>
@@ -242,9 +241,9 @@ export const Header: React.FC<HeaderProps> = ({ onOpenSearch }) => {
         {/* ========================================================= */}
         {/* SISI KANAN (DESKTOP): Menu Navigasi & Search Icon         */}
         {/* ========================================================= */}
-        <div className="hidden md:flex items-center space-x-7 lg:space-x-9">
+        <div className="hidden md:flex items-center space-x-7 lg:space-x-8">
           <nav aria-label="Navigasi Utama">
-            <ul className="flex items-center space-x-6 lg:space-x-8">
+            <ul className="flex items-center space-x-6 lg:space-x-7">
               {/* 1. Beranda */}
               <li>
                 <a
@@ -252,14 +251,14 @@ export const Header: React.FC<HeaderProps> = ({ onOpenSearch }) => {
                   onClick={() => setActiveItem("beranda")}
                   className={`group relative inline-flex items-center py-2 font-sans text-[13px] tracking-[0.06em] font-medium uppercase transition-colors ${
                     activeItem === "beranda"
-                      ? "text-[#6B1724]"
-                      : "text-[#2C2723] hover:text-[#6B1724]"
+                      ? "text-[#701D2C]"
+                      : "text-[#292622] hover:text-[#701D2C]"
                   }`}
                 >
                   <span>Beranda</span>
-                  {/* Underline emas aktif / hover */}
+                  {/* Underline emas halus */}
                   <span
-                    className={`absolute bottom-0 left-0 h-[2px] bg-[#C5A059] rounded-full transition-all duration-300 ${
+                    className={`absolute bottom-0 left-0 h-[2px] bg-[#B99A62] rounded-full transition-all duration-300 ${
                       activeItem === "beranda"
                         ? "w-full"
                         : "w-0 group-hover:w-full"
@@ -282,21 +281,21 @@ export const Header: React.FC<HeaderProps> = ({ onOpenSearch }) => {
                   aria-haspopup="true"
                   className={`group inline-flex items-center gap-1.5 py-2 font-sans text-[13px] tracking-[0.06em] font-medium uppercase transition-colors ${
                     dropdownOpen || activeItem === "risalah"
-                      ? "text-[#6B1724]"
-                      : "text-[#2C2723] hover:text-[#6B1724]"
+                      ? "text-[#701D2C]"
+                      : "text-[#292622] hover:text-[#701D2C]"
                   }`}
                 >
                   <span>Risalah</span>
                   <ChevronDown
-                    className={`w-3.5 h-3.5 text-[#C5A059] transition-transform duration-300 ease-out ${
+                    className={`w-3.5 h-3.5 text-[#B99A62] transition-transform duration-300 ease-out ${
                       dropdownOpen
-                        ? "rotate-180 text-[#6B1724]"
+                        ? "rotate-180 text-[#701D2C]"
                         : "group-hover:rotate-180"
                     }`}
                     aria-hidden="true"
                   />
                   <span
-                    className={`absolute bottom-0 left-0 h-[2px] bg-[#C5A059] rounded-full transition-all duration-300 ${
+                    className={`absolute bottom-0 left-0 h-[2px] bg-[#B99A62] rounded-full transition-all duration-300 ${
                       activeItem === "risalah"
                         ? "w-full"
                         : "w-0 group-hover:w-full"
@@ -306,17 +305,17 @@ export const Header: React.FC<HeaderProps> = ({ onOpenSearch }) => {
 
                 {/* Dropdown Menu Box */}
                 <div
-                  className={`absolute left-1/2 -translate-x-1/2 top-full pt-2.5 w-80 z-50 transition-all duration-200 ease-out ${
+                  className={`absolute left-1/2 -translate-x-1/2 top-full pt-2 w-80 z-50 transition-all duration-200 ease-out ${
                     dropdownOpen
                       ? "opacity-100 translate-y-0 pointer-events-auto"
-                      : "opacity-0 translate-y-2 pointer-events-none"
+                      : "opacity-0 translate-y-1.5 pointer-events-none"
                   }`}
                 >
-                  <div className="bg-[#FAF8F5] border border-[#EADBCE] rounded-sm shadow-[0_14px_35px_-8px_rgba(107,23,36,0.1),0_4px_16px_rgba(0,0,0,0.03)] overflow-hidden">
-                    {/* Garis Aksen Emas & Burgundy di Pucuk Dropdown */}
-                    <div className="h-[2.5px] bg-gradient-to-r from-[#6B1724] via-[#C5A059] to-[#6B1724]" />
+                  <div className="bg-[#F8F5EF] border border-[#E9E1D5] rounded-sm shadow-[0_12px_28px_-8px_rgba(41,38,34,0.08)] overflow-hidden">
+                    {/* Garis Aksen Emas & Burgundy Halus di Pucuk Dropdown */}
+                    <div className="h-[2px] bg-gradient-to-r from-[#701D2C] via-[#B99A62] to-[#701D2C]" />
 
-                    <ul className="py-2 divide-y divide-[#EADBCE]/60">
+                    <ul className="py-1.5 divide-y divide-[#E9E1D5]/70">
                       {RISALAH_ITEMS.map((item) => (
                         <li key={item.title}>
                           <a
@@ -325,14 +324,14 @@ export const Header: React.FC<HeaderProps> = ({ onOpenSearch }) => {
                               setActiveItem("risalah");
                               setDropdownOpen(false);
                             }}
-                            className="group/item flex flex-col px-4 py-3 hover:bg-[#6B1724]/[0.035] transition-colors relative"
+                            className="group/item flex flex-col px-4 py-3 hover:bg-[#701D2C]/[0.035] transition-colors relative"
                           >
                             <div className="flex items-center justify-between">
-                              <span className="font-sans text-[13px] font-semibold text-[#2C2723] group-hover/item:text-[#6B1724] transition-colors tracking-wide flex items-center gap-1.5">
+                              <span className="font-sans text-[13px] font-semibold text-[#292622] group-hover/item:text-[#701D2C] transition-colors tracking-wide flex items-center gap-1.5">
                                 {item.title}
-                                <ArrowUpRight className="w-3 h-3 text-[#C5A059] opacity-0 -translate-x-1 translate-y-1 group-hover/item:opacity-100 group-hover/item:translate-x-0 group-hover/item:translate-y-0 transition-all duration-200" />
+                                <ArrowUpRight className="w-3 h-3 text-[#B99A62] opacity-0 -translate-x-1 translate-y-1 group-hover/item:opacity-100 group-hover/item:translate-x-0 group-hover/item:translate-y-0 transition-all duration-200" />
                               </span>
-                              <span className="font-serif text-[11.5px] text-[#C5A059] group-hover/item:text-[#6B1724] opacity-85 group-hover/item:opacity-100 transition-colors">
+                              <span className="font-editorial text-[12px] text-[#B99A62] group-hover/item:text-[#701D2C] opacity-90 transition-colors">
                                 {item.arabic}
                               </span>
                             </div>
@@ -354,13 +353,13 @@ export const Header: React.FC<HeaderProps> = ({ onOpenSearch }) => {
                   onClick={() => setActiveItem("hikmah")}
                   className={`group relative inline-flex items-center py-2 font-sans text-[13px] tracking-[0.06em] font-medium uppercase transition-colors ${
                     activeItem === "hikmah"
-                      ? "text-[#6B1724]"
-                      : "text-[#2C2723] hover:text-[#6B1724]"
+                      ? "text-[#701D2C]"
+                      : "text-[#292622] hover:text-[#701D2C]"
                   }`}
                 >
                   <span>Hikmah</span>
                   <span
-                    className={`absolute bottom-0 left-0 h-[2px] bg-[#C5A059] rounded-full transition-all duration-300 ${
+                    className={`absolute bottom-0 left-0 h-[2px] bg-[#B99A62] rounded-full transition-all duration-300 ${
                       activeItem === "hikmah"
                         ? "w-full"
                         : "w-0 group-hover:w-full"
@@ -376,13 +375,13 @@ export const Header: React.FC<HeaderProps> = ({ onOpenSearch }) => {
                   onClick={() => setActiveItem("profil-abuya")}
                   className={`group relative inline-flex items-center py-2 font-sans text-[13px] tracking-[0.06em] font-medium uppercase transition-colors ${
                     activeItem === "profil-abuya"
-                      ? "text-[#6B1724]"
-                      : "text-[#2C2723] hover:text-[#6B1724]"
+                      ? "text-[#701D2C]"
+                      : "text-[#292622] hover:text-[#701D2C]"
                   }`}
                 >
                   <span>Profil Abuya</span>
                   <span
-                    className={`absolute bottom-0 left-0 h-[2px] bg-[#C5A059] rounded-full transition-all duration-300 ${
+                    className={`absolute bottom-0 left-0 h-[2px] bg-[#B99A62] rounded-full transition-all duration-300 ${
                       activeItem === "profil-abuya"
                         ? "w-full"
                         : "w-0 group-hover:w-full"
@@ -394,20 +393,20 @@ export const Header: React.FC<HeaderProps> = ({ onOpenSearch }) => {
           </nav>
 
           {/* Garis Pemisah Vertikal Halus */}
-          <div className="h-5 w-[1px] bg-[#EADBCE]" aria-hidden="true" />
+          <div className="h-4 w-[1px] bg-[#E9E1D5]" aria-hidden="true" />
 
           {/* Search Icon Button */}
           <button
             type="button"
             onClick={onOpenSearch}
-            className="group flex items-center gap-2 px-3 py-1.5 rounded-sm border border-[#EADBCE] bg-[#FAF8F5] hover:bg-[#6B1724]/[0.04] hover:border-[#C5A059] text-[#2C2723] hover:text-[#6B1724] transition-all duration-200 focus:outline-none focus:ring-1 focus:ring-[#C5A059]"
+            className="group flex items-center gap-2 px-3 py-1.5 rounded-sm border border-[#E9E1D5] bg-[#F8F5EF] hover:bg-[#701D2C]/[0.03] hover:border-[#B99A62] text-[#292622] hover:text-[#701D2C] transition-all duration-200 focus:outline-none focus:ring-1 focus:ring-[#B99A62]"
             aria-label="Cari artikel, petuah, dan fatwa"
           >
-            <Search className="w-4 h-4 text-[#6B1724] transition-transform duration-200 group-hover:scale-110" />
-            <span className="font-sans text-[11px] uppercase tracking-[0.14em] text-[#7C746A] group-hover:text-[#6B1724] transition-colors font-medium">
+            <Search className="w-3.5 h-3.5 text-[#701D2C] transition-transform duration-200 group-hover:scale-110" />
+            <span className="font-sans text-[11px] uppercase tracking-[0.14em] text-[#7C746A] group-hover:text-[#701D2C] transition-colors font-medium">
               Cari
             </span>
-            <kbd className="hidden lg:inline text-[10px] font-mono text-[#7C746A] bg-white/70 border border-[#EADBCE] px-1.5 py-0.5 rounded shadow-[0_1px_1px_rgba(0,0,0,0.03)]">
+            <kbd className="hidden lg:inline text-[9.5px] font-mono text-[#7C746A] bg-white border border-[#E9E1D5] px-1.5 py-0.5 rounded shadow-[0_1px_1px_rgba(0,0,0,0.03)]">
               ⌘K
             </kbd>
           </button>
@@ -416,12 +415,12 @@ export const Header: React.FC<HeaderProps> = ({ onOpenSearch }) => {
         {/* ========================================================= */}
         {/* SISI KANAN (MOBILE): Search & Hamburger Button            */}
         {/* ========================================================= */}
-        <div className="flex md:hidden items-center gap-2">
-          {/* Tombol Pencarian Mobile Cepat */}
+        <div className="flex md:hidden items-center gap-1.5">
+          {/* Tombol Pencarian Mobile */}
           <button
             type="button"
             onClick={onOpenSearch}
-            className="p-2 rounded-sm border border-[#EADBCE] text-[#6B1724] hover:bg-[#6B1724]/[0.05] transition-colors"
+            className="p-2 rounded-sm border border-[#E9E1D5] text-[#701D2C] hover:bg-[#701D2C]/[0.05] transition-colors"
             aria-label="Buka pencarian"
           >
             <Search className="w-4 h-4" />
@@ -431,7 +430,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenSearch }) => {
           <button
             type="button"
             onClick={() => setMobileMenuOpen(true)}
-            className="p-2 rounded-sm border border-[#EADBCE] text-[#2C2723] hover:text-[#6B1724] hover:bg-[#6B1724]/[0.05] transition-colors"
+            className="p-2 rounded-sm border border-[#E9E1D5] text-[#292622] hover:text-[#701D2C] hover:bg-[#701D2C]/[0.05] transition-colors"
             aria-label="Buka menu navigasi"
             aria-expanded={mobileMenuOpen}
           >
@@ -455,18 +454,18 @@ export const Header: React.FC<HeaderProps> = ({ onOpenSearch }) => {
           {/* Drawer Menu Vertikal */}
           <aside
             aria-label="Menu Mobile Kalam Abuya"
-            className="fixed inset-y-0 right-0 w-full max-w-xs sm:max-w-sm bg-[#FAF8F5] border-l border-[#EADBCE] shadow-2xl flex flex-col justify-between z-10 animate-in slide-in-from-right duration-300"
+            className="fixed inset-y-0 right-0 w-full max-w-xs sm:max-w-sm bg-[#F8F5EF] border-l border-[#E9E1D5] shadow-2xl flex flex-col justify-between z-10 animate-in slide-in-from-right duration-300"
           >
             {/* Header Drawer */}
             <div>
-              <div className="h-[76px] sm:h-[82px] px-5 flex items-center justify-between border-b border-[#EADBCE]">
+              <div className="h-[68px] sm:h-[72px] px-5 flex items-center justify-between border-b border-[#E9E1D5]">
                 <div className="flex items-center gap-3">
-                  <KalamAbuyaLogo className="w-9 h-9" />
+                  <KalamAbuyaLogo className="w-8 h-8 sm:w-9 sm:h-9" />
                   <div className="flex flex-col text-left">
-                    <span className="font-serif text-[17px] font-bold tracking-[0.14em] uppercase text-[#6B1724]">
+                    <span className="font-editorial text-[18px] font-bold tracking-[0.14em] uppercase text-[#701D2C]">
                       KALAM ABUYA
                     </span>
-                    <span className="font-sans text-[8.5px] uppercase tracking-[0.2em] text-[#7C746A]">
+                    <span className="font-sans text-[8px] sm:text-[8.5px] uppercase tracking-[0.2em] text-[#7C746A]">
                       Ruang Pemikiran &amp; Hikmah
                     </span>
                   </div>
@@ -475,7 +474,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenSearch }) => {
                 <button
                   type="button"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="p-2 text-[#7C746A] hover:text-[#6B1724] transition-colors rounded-sm hover:bg-[#6B1724]/5"
+                  className="p-1.5 text-[#7C746A] hover:text-[#701D2C] transition-colors rounded-sm hover:bg-[#701D2C]/5"
                   aria-label="Tutup menu navigasi"
                 >
                   <X className="w-5 h-5" />
@@ -483,28 +482,28 @@ export const Header: React.FC<HeaderProps> = ({ onOpenSearch }) => {
               </div>
 
               {/* Quick Search Bar di Mobile Drawer */}
-              <div className="p-5 pb-3">
+              <div className="p-4 sm:p-5 pb-3">
                 <button
                   type="button"
                   onClick={() => {
                     setMobileMenuOpen(false);
                     onOpenSearch?.();
                   }}
-                  className="w-full flex items-center justify-between px-3.5 py-2.5 bg-white/80 border border-[#EADBCE] rounded-sm text-left group hover:border-[#C5A059] transition-colors"
+                  className="w-full flex items-center justify-between px-3.5 py-2.5 bg-white border border-[#E9E1D5] rounded-sm text-left group hover:border-[#B99A62] transition-colors"
                 >
-                  <span className="flex items-center gap-2.5 font-sans text-xs text-[#7C746A] group-hover:text-[#6B1724] transition-colors">
-                    <Search className="w-4 h-4 text-[#6B1724]" />
-                    <span>Cari fatwa, nasihat, kitab...</span>
+                  <span className="flex items-center gap-2.5 font-sans text-xs text-[#7C746A] group-hover:text-[#701D2C] transition-colors">
+                    <Search className="w-3.5 h-3.5 text-[#701D2C]" />
+                    <span>Cari fatwa, risalah, petuah...</span>
                   </span>
-                  <kbd className="text-[10px] font-mono text-[#7C746A] bg-[#FAF8F5] border border-[#EADBCE] px-1.5 py-0.5 rounded">
+                  <kbd className="text-[9.5px] font-mono text-[#7C746A] bg-[#F8F5EF] border border-[#E9E1D5] px-1.5 py-0.5 rounded">
                     ⌘K
                   </kbd>
                 </button>
               </div>
 
               {/* List Menu Vertikal */}
-              <nav className="px-5 py-2">
-                <ul className="divide-y divide-[#EADBCE]/70">
+              <nav className="px-4 sm:px-5 py-2">
+                <ul className="divide-y divide-[#E9E1D5]/70">
                   {/* Beranda */}
                   <li>
                     <a
@@ -513,23 +512,23 @@ export const Header: React.FC<HeaderProps> = ({ onOpenSearch }) => {
                         setActiveItem("beranda");
                         setMobileMenuOpen(false);
                       }}
-                      className={`flex items-center justify-between py-3.5 font-sans text-sm tracking-[0.05em] font-medium transition-colors ${
+                      className={`flex items-center justify-between py-3 font-sans text-sm tracking-[0.05em] font-medium transition-colors ${
                         activeItem === "beranda"
-                          ? "text-[#6B1724] font-semibold"
-                          : "text-[#2C2723] hover:text-[#6B1724]"
+                          ? "text-[#701D2C] font-semibold"
+                          : "text-[#292622] hover:text-[#701D2C]"
                       }`}
                     >
                       <span className="flex items-center gap-2.5">
                         <span
                           className={`w-1.5 h-1.5 rounded-full ${
                             activeItem === "beranda"
-                              ? "bg-[#C5A059]"
+                              ? "bg-[#B99A62]"
                               : "bg-transparent"
                           }`}
                         />
                         Beranda
                       </span>
-                      <span className="text-[#C5A059] text-xs font-serif">→</span>
+                      <span className="text-[#B99A62] text-xs font-serif">→</span>
                     </a>
                   </li>
 
@@ -539,23 +538,23 @@ export const Header: React.FC<HeaderProps> = ({ onOpenSearch }) => {
                       <button
                         type="button"
                         onClick={() => setMobileRisalahOpen((prev) => !prev)}
-                        className="w-full flex items-center justify-between py-3.5 font-sans text-sm tracking-[0.05em] font-medium text-[#2C2723] hover:text-[#6B1724] transition-colors"
+                        className="w-full flex items-center justify-between py-3 font-sans text-sm tracking-[0.05em] font-medium text-[#292622] hover:text-[#701D2C] transition-colors"
                         aria-expanded={mobileRisalahOpen}
                       >
                         <span className="flex items-center gap-2.5">
                           <span
                             className={`w-1.5 h-1.5 rounded-full ${
                               activeItem === "risalah"
-                                ? "bg-[#C5A059]"
+                                ? "bg-[#B99A62]"
                                 : "bg-transparent"
                             }`}
                           />
                           Risalah
                         </span>
                         <ChevronDown
-                          className={`w-4 h-4 text-[#C5A059] transition-transform duration-300 ${
+                          className={`w-4 h-4 text-[#B99A62] transition-transform duration-300 ${
                             mobileRisalahOpen
-                              ? "rotate-180 text-[#6B1724]"
+                              ? "rotate-180 text-[#701D2C]"
                               : ""
                           }`}
                         />
@@ -572,13 +571,13 @@ export const Header: React.FC<HeaderProps> = ({ onOpenSearch }) => {
                                 setActiveItem("risalah");
                                 setMobileMenuOpen(false);
                               }}
-                              className="flex flex-col p-2.5 rounded-sm bg-white/50 border border-[#EADBCE]/50 hover:bg-[#6B1724]/[0.04] transition-colors"
+                              className="flex flex-col p-2.5 rounded-sm bg-white border border-[#E9E1D5]/70 hover:bg-[#701D2C]/[0.035] transition-colors"
                             >
                               <div className="flex items-center justify-between">
-                                <span className="font-sans text-[13px] font-semibold text-[#2C2723] hover:text-[#6B1724]">
+                                <span className="font-sans text-[13px] font-semibold text-[#292622] hover:text-[#701D2C]">
                                   {subItem.title}
                                 </span>
-                                <span className="font-serif text-[11px] text-[#C5A059]">
+                                <span className="font-editorial text-[11px] text-[#B99A62]">
                                   {subItem.arabic}
                                 </span>
                               </div>
@@ -600,23 +599,23 @@ export const Header: React.FC<HeaderProps> = ({ onOpenSearch }) => {
                         setActiveItem("hikmah");
                         setMobileMenuOpen(false);
                       }}
-                      className={`flex items-center justify-between py-3.5 font-sans text-sm tracking-[0.05em] font-medium transition-colors ${
+                      className={`flex items-center justify-between py-3 font-sans text-sm tracking-[0.05em] font-medium transition-colors ${
                         activeItem === "hikmah"
-                          ? "text-[#6B1724] font-semibold"
-                          : "text-[#2C2723] hover:text-[#6B1724]"
+                          ? "text-[#701D2C] font-semibold"
+                          : "text-[#292622] hover:text-[#701D2C]"
                       }`}
                     >
                       <span className="flex items-center gap-2.5">
                         <span
                           className={`w-1.5 h-1.5 rounded-full ${
                             activeItem === "hikmah"
-                              ? "bg-[#C5A059]"
+                              ? "bg-[#B99A62]"
                               : "bg-transparent"
                           }`}
                         />
                         Hikmah
                       </span>
-                      <span className="text-[#C5A059] text-xs font-serif">→</span>
+                      <span className="text-[#B99A62] text-xs font-serif">→</span>
                     </a>
                   </li>
 
@@ -628,41 +627,40 @@ export const Header: React.FC<HeaderProps> = ({ onOpenSearch }) => {
                         setActiveItem("profil-abuya");
                         setMobileMenuOpen(false);
                       }}
-                      className={`flex items-center justify-between py-3.5 font-sans text-sm tracking-[0.05em] font-medium transition-colors ${
+                      className={`flex items-center justify-between py-3 font-sans text-sm tracking-[0.05em] font-medium transition-colors ${
                         activeItem === "profil-abuya"
-                          ? "text-[#6B1724] font-semibold"
-                          : "text-[#2C2723] hover:text-[#6B1724]"
+                          ? "text-[#701D2C] font-semibold"
+                          : "text-[#292622] hover:text-[#701D2C]"
                       }`}
                     >
                       <span className="flex items-center gap-2.5">
                         <span
                           className={`w-1.5 h-1.5 rounded-full ${
                             activeItem === "profil-abuya"
-                              ? "bg-[#C5A059]"
+                              ? "bg-[#B99A62]"
                               : "bg-transparent"
                           }`}
                         />
                         Profil Abuya
                       </span>
-                      <span className="text-[#C5A059] text-xs font-serif">→</span>
+                      <span className="text-[#B99A62] text-xs font-serif">→</span>
                     </a>
                   </li>
                 </ul>
               </nav>
             </div>
 
-            {/* Footer Drawer: Kutipan Hikmah & Brand Identity */}
-            <div className="p-5 border-t border-[#EADBCE] bg-[#FAF8F5]/80 text-center">
-              {/* Garis Aksen Emas Mini */}
-              <div className="flex items-center justify-center gap-2 mb-2.5">
-                <span className="w-6 h-[1px] bg-[#C5A059]/40" />
-                <span className="w-1.5 h-1.5 rotate-45 border border-[#C5A059] bg-[#C5A059]/20" />
-                <span className="w-6 h-[1px] bg-[#C5A059]/40" />
+            {/* Footer Drawer */}
+            <div className="p-4 sm:p-5 border-t border-[#E9E1D5] bg-[#F8F5EF] text-center">
+              <div className="flex items-center justify-center gap-2 mb-2">
+                <span className="w-5 h-[1px] bg-[#B99A62]/40" />
+                <span className="w-1.5 h-1.5 rotate-45 border border-[#B99A62] bg-[#B99A62]/20" />
+                <span className="w-5 h-[1px] bg-[#B99A62]/40" />
               </div>
-              <p className="font-serif italic text-xs text-[#7C746A] leading-relaxed">
+              <p className="font-reading italic text-xs text-[#7C746A] leading-relaxed">
                 &ldquo;Ilmu yang menerangi pikiran, hikmah yang menuntun kehidupan.&rdquo;
               </p>
-              <p className="text-[9px] font-sans tracking-[0.2em] uppercase text-[#6B1724] mt-2 font-semibold">
+              <p className="text-[9px] font-sans tracking-[0.2em] uppercase text-[#701D2C] mt-2 font-semibold">
                 Kalam Abuya &bull; Ruang Pemikiran &amp; Hikmah
               </p>
             </div>
