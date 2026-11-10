@@ -89,9 +89,9 @@ const config: Config = {
         },
       },
       fontFamily: {
-        serif: ["var(--font-editorial)", "'Cormorant Garamond'", "Lora", "Georgia", "serif"],
-        editorial: ["var(--font-editorial)", "'Cormorant Garamond'", "Georgia", "serif"],
-        reading: ["var(--font-reading)", "'Lora'", "Georgia", "serif"],
+        serif: ["'Cormorant Garamond'", "Lora", "Georgia", "serif"],
+        editorial: ["'Cormorant Garamond'", "Georgia", "serif"],
+        reading: ["'Lora'", "Georgia", "serif"],
         sans: ["var(--font-sans)", "'Inter'", "system-ui", "-apple-system", "sans-serif"],
       },
       letterSpacing: {
