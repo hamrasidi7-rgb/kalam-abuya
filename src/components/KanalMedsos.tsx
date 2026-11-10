@@ -26,45 +26,45 @@ export const DEFAULT_MEDSOS_CHANNELS: SocialMediaChannel[] = [
     id: "yt",
     platform: "youtube",
     name: "YouTube",
-    handle: "@kalamabuya",
-    url: "https://youtube.com/@kalamabuya",
+    handle: "@ponpesalkarimiyyah",
+    url: "https://www.youtube.com/@ponpesalkarimiyyah",
     cta: "Tonton Kajian",
     is_active: true,
-    description: "Kajian Rutin & Siaran Majlis",
+    description: "Kajian Lengkap & Majlis",
     followers: "Kajian Lengkap",
   },
   {
     id: "ig",
     platform: "instagram",
     name: "Instagram",
-    handle: "@kalamabuya",
-    url: "https://instagram.com/kalamabuya",
-    cta: "Ikuti Nasihat",
+    handle: "@a.busyrokarim",
+    url: "https://www.instagram.com/a.busyrokarim/",
+    cta: "Mutiara Hikmah",
     is_active: true,
-    description: "Petuah Harian & Infografis",
-    followers: "Kutipan Visual",
+    description: "Petuah Harian & Mutiara Hikmah",
+    followers: "Petuah Harian",
   },
   {
     id: "tt",
     platform: "tiktok",
     name: "TikTok",
-    handle: "@kalamabuya",
-    url: "https://tiktok.com/@kalamabuya",
-    cta: "Simak Petuah",
+    handle: "@ponpes.alkarimiyyah",
+    url: "https://www.tiktok.com/@ponpes.alkarimiyyah/",
+    cta: "Video Pendek",
     is_active: true,
-    description: "Kutipan Singkat & Hikmah",
-    followers: "Video Mutiara",
+    description: "Cuplikan Hikmah & Nasihat Singkat",
+    followers: "Video Pendek",
   },
   {
     id: "fb",
     platform: "facebook",
     name: "Facebook",
-    handle: "@kalamabuya",
-    url: "https://facebook.com/kalamabuya",
-    cta: "Kunjungi Laman",
+    handle: "Busyro Karim",
+    url: "https://web.facebook.com/BusyroKariman/",
+    cta: "Kalam & Catatan",
     is_active: true,
-    description: "Arsip Risalah & Artikel",
-    followers: "Komunitas Dakwah",
+    description: "Arsip Kalam & Risalah Dakwah",
+    followers: "Laman Resmi",
   },
 ];
 
@@ -228,7 +228,7 @@ export const KanalMedsos: React.FC<KanalMedsosProps> = ({
                 <h3 className="font-serif text-base sm:text-lg font-bold text-[#2C2723] group-hover:text-[#6B1724] transition-colors leading-tight">
                   {channel.name}
                 </h3>
-                <p className="font-sans text-xs text-[#7C746A] mt-0.5 tracking-tight group-hover:text-[#2C2723] transition-colors">
+                <p className="font-sans text-xs text-[#7C746A] mt-0.5 tracking-tight group-hover:text-[#2C2723] transition-colors truncate block max-w-full">
                   {channel.handle}
                 </p>
 
