@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-forest: #17352B;
+    --color-ivory: #F7F3EA;
+    --color-gold: #B69A62;
+    --color-charcoal: #22252A;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    color: #22252A;
+    background-color: #F7F3EA;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background-color: #17352B;
+    color: #F7F3EA;
+  }
+}
+
+/* Custom Editorial Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F7F3EA;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #C7AD76;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #B69A62;
+}
+
+/* Subtle editorial paper grain overlay effect (pure CSS, no heavy image) */
+.paper-pattern {
+  background-color: #F7F3EA;
+  background-image: radial-gradient(#17352b08 0.75px, transparent 0.75px);
+  background-size: 24px 24px;
+}
+
+.paper-pattern-dark {
+  background-color: #17352B;
+  background-image: radial-gradient(#ffffff0a 0.75px, transparent 0.75px);
+  background-size: 24px 24px;
+}
+
+/* Editorial typographic rules */
+.editorial-line {
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.editorial-line::before,
+.editorial-line::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid rgba(182, 154, 98, 0.35);
+}
+
+.editorial-line:not(:empty)::before {
+  margin-right: 1.25rem;
+}
+
+.editorial-line:not(:empty)::after {
+  margin-left: 1.25rem;
+}
+
+/* Delicate subtle transitions */
+.transition-editorial {
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}

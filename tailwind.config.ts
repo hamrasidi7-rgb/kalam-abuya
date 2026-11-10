@@ -1,0 +1,89 @@
+import type { Config } from "tailwindcss";
+
+const config: Config = {
+  content: [
+    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+  ],
+  theme: {
+    extend: {
+      colors: {
+        forest: {
+          DEFAULT: "#17352B",
+          50: "#F2F6F4",
+          100: "#E3ECE8",
+          200: "#C6D8D0",
+          300: "#9FBDB0",
+          400: "#6B9B88",
+          500: "#3D735E",
+          600: "#2B5849",
+          700: "#204639",
+          800: "#17352B",
+          900: "#0F241D",
+          950: "#081510",
+        },
+        ivory: {
+          DEFAULT: "#F7F3EA",
+          light: "#FCFAF6",
+          50: "#FAF8F3",
+          100: "#F7F3EA",
+          200: "#EFE8D6",
+          300: "#E5D9BC",
+          400: "#D6C39A",
+          500: "#C2A877",
+        },
+        gold: {
+          DEFAULT: "#B69A62",
+          light: "#D8C496",
+          soft: "#C7AD76",
+          dark: "#8E7440",
+          50: "#FAF7EE",
+          100: "#F3ECD9",
+          200: "#E6D7B1",
+          300: "#D7C088",
+          400: "#C7AD76",
+          500: "#B69A62",
+          600: "#9E824C",
+          700: "#7E6539",
+          800: "#614D2C",
+        },
+        charcoal: {
+          DEFAULT: "#22252A",
+          light: "#3A3F47",
+          muted: "#5B6470",
+          soft: "#7E8896",
+          border: "#E2DDD3",
+          50: "#F8F9FA",
+          100: "#F1F2F4",
+          200: "#E2E4E8",
+          300: "#C7CBD2",
+          400: "#8D94A1",
+          500: "#5B6470",
+          600: "#3F4650",
+          700: "#2E333B",
+          800: "#22252A",
+          900: "#181A1E",
+        },
+      },
+      fontFamily: {
+        serif: ["var(--font-serif)", "Newsreader", "Lora", "Georgia", "serif"],
+        sans: ["var(--font-sans)", "Inter", "system-ui", "sans-serif"],
+      },
+      letterSpacing: {
+        editorial: "0.08em",
+        wideEditorial: "0.15em",
+        ultraWide: "0.25em",
+      },
+      boxShadow: {
+        subtle: "0 2px 10px rgba(23, 53, 43, 0.04)",
+        card: "0 4px 20px -2px rgba(23, 53, 43, 0.06)",
+        cardHover: "0 12px 30px -4px rgba(23, 53, 43, 0.12)",
+        editorial: "0 20px 40px -15px rgba(23, 53, 43, 0.08)",
+      },
+    },
+  },
+  plugins: [],
+};
+
+export default config;
