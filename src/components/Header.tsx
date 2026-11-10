@@ -20,19 +20,19 @@ export const RISALAH_ITEMS: RisalahMenuItem[] = [
   {
     title: "Fikih & Fatwa",
     arabic: "الفقه والفتوى",
-    href: "#tema-kehidupan",
+    href: "#risalah",
     description: "Kaidah hukum amaliah, muamalah, & fatwa kontemporer",
   },
   {
     title: "Akhlak & Tasawuf",
     arabic: "الأخلاق والتصوف",
-    href: "#kalam-terbaru",
+    href: "#risalah",
     description: "Pembersihan jiwa, adab mulia, & tazkiyatun nafs",
   },
   {
     title: "Kajian Kitab",
     arabic: "دراسة الكتب",
-    href: "#video-kalam",
+    href: "#risalah",
     description: "Syarah turats ulama salaf & ta'lim bersanad",
   },
 ];

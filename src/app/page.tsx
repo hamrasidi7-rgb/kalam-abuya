@@ -4,12 +4,7 @@ import React, { useState } from "react";
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
 import { KanalMedsos } from "@/components/KanalMedsos";
-import { TemaKehidupan } from "@/components/TemaKehidupan";
-import { KalamTerbaru } from "@/components/KalamTerbaru";
-import { VideoKalam } from "@/components/VideoKalam";
-import { ProfilAbuya } from "@/components/ProfilAbuya";
-import { KutipanBesar } from "@/components/KutipanBesar";
-import { KanalResmi } from "@/components/KanalResmi";
+import { TigaKartuNavigasi } from "@/components/TigaKartuNavigasi";
 import { Footer } from "@/components/Footer";
 import { SearchModal } from "@/components/SearchModal";
 
@@ -24,37 +19,22 @@ export default function Home() {
         onClose={() => setIsSearchOpen(false)}
       />
 
-      {/* Editorial Header */}
+      {/* 1. Header */}
       <Header onOpenSearch={() => setIsSearchOpen(true)} />
 
       {/* Main Content Sections */}
       <main className="flex-1">
-        {/* 1. Hero Section */}
+        {/* 2. Foto Hero Abuya */}
         <Hero />
 
-        {/* 2. Kanal Medsos Kalam Abuya (Jejak Dakwah Digital) */}
+        {/* 3. Jejak Dakwah Digital (Pill Buttons) */}
         <KanalMedsos />
 
-        {/* 3. Tema Kehidupan (Enam Pilar Tema Kehidupan) */}
-        <TemaKehidupan />
-
-        {/* 4. Kalam Terbaru (Article Grid & Reader Modal) */}
-        <KalamTerbaru />
-
-        {/* 5. Video Kalam (Audio-visual Lectures & Play Modal) */}
-        <VideoKalam />
-
-        {/* 6. Profil Abuya (Portrait, Biography, & Pillars of Dakwah) */}
-        <ProfilAbuya />
-
-        {/* 7. Kutipan Pilihan (Mutiara Hikmah in Deep Burgundy) */}
-        <KutipanBesar />
-
-        {/* 8. Newsletter & Kanal Resmi */}
-        <KanalResmi />
+        {/* 4. Tiga Kartu Navigasi: Risalah, Hikmah, Profil Abuya */}
+        <TigaKartuNavigasi />
       </main>
 
-      {/* Footer */}
+      {/* 5. Footer */}
       <Footer />
     </div>
   );

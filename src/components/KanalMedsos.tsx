@@ -3,7 +3,7 @@
 import React from "react";
 
 /**
- * Interface data kanal media sosial (dapat dipasok langsung dari backend/API/database)
+ * Interface data kanal media sosial
  */
 export interface SocialMediaChannel {
   id?: string;
@@ -11,9 +11,7 @@ export interface SocialMediaChannel {
   name: string;
   handle: string;
   url: string;
-  cta?: string;
   is_active: boolean;
-  description?: string;
 }
 
 /**
@@ -141,7 +139,6 @@ export const KanalMedsos: React.FC<KanalMedsosProps> = ({
   subtitle = "Ikuti kajian, petuah, dan mutiara hikmah Abuya melalui kanal resmi.",
   className = "",
 }) => {
-  // Filter ketat: hanya render platform yang URL-nya aktif
   const activeChannels = channels.filter(
     (ch) => ch.is_active && Boolean(ch.url && ch.url.trim().length > 0)
   );
@@ -154,11 +151,11 @@ export const KanalMedsos: React.FC<KanalMedsosProps> = ({
     <section
       id="kanal-medsos"
       aria-label="Jejak Dakwah Digital Kalam Abuya"
-      className={`py-7 sm:py-9 md:py-10 bg-[#F8F5EF] border-b border-[#E9E1D5] ${className}`}
+      className={`pt-2 sm:pt-3 pb-8 sm:pb-10 bg-[#F8F5EF] border-b border-[#E9E1D5] ${className}`}
     >
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        {/* Header Section: Minimalis & Elegan */}
-        <div className="max-w-xl mx-auto mb-5 sm:mb-6">
+        {/* Header Section: Judul & Deskripsi Rapi */}
+        <div className="max-w-xl mx-auto mb-4 sm:mb-5">
           <h2 className="font-editorial text-xl sm:text-2xl font-bold text-[#701D2C] tracking-[0.06em] uppercase leading-tight">
             {title}
           </h2>
@@ -169,8 +166,8 @@ export const KanalMedsos: React.FC<KanalMedsosProps> = ({
           )}
         </div>
 
-        {/* Desain Tombol Pill Minimalis (Mufti Menk Style) */}
-        {/* Mobile: 2 tombol per baris | Desktop: susun horizontal rata tengah */}
+        {/* Empat Tombol Pill Minimalis (Mufti Menk Style) */}
+        {/* Mobile: 2 tombol per baris | Desktop: horizontal sejajar */}
         <div className="grid grid-cols-2 md:flex md:flex-row md:items-center md:justify-center gap-2 sm:gap-2.5 max-w-[310px] sm:max-w-[340px] md:max-w-none mx-auto">
           {activeChannels.map((channel) => (
             <a

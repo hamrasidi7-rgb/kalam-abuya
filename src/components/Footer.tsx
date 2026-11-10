@@ -69,7 +69,7 @@ export const Footer: React.FC = () => {
               {CATEGORIES_DATA.map((cat) => (
                 <a
                   key={cat.id}
-                  href="#tema-kehidupan"
+                  href="#risalah"
                   className="text-[#F8F5EF]/75 hover:text-[#B99A62] transition-colors truncate"
                 >
                   {cat.name}
