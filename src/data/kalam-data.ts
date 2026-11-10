@@ -388,8 +388,7 @@ export const OFFICIAL_CHANNELS: OfficialChannel[] = [
 
 export const NAV_LINKS = [
   { label: "Beranda", href: "#beranda" },
-  { label: "Kalam", href: "#kalam-terbaru" },
-  { label: "Kaidah Fikih", href: "#tema-kehidupan" },
-  { label: "Petuah", href: "#kalam-terbaru" },
-  { label: "Tentang Abuya", href: "#profil-abuya" },
+  { label: "Risalah", href: "#tema-kehidupan" },
+  { label: "Hikmah", href: "#hikmah" },
+  { label: "Profil Abuya", href: "#profil-abuya" },
 ];

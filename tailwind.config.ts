@@ -9,6 +9,24 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        parchment: {
+          DEFAULT: "#FAF8F5",
+          light: "#FDFCF9",
+          50: "#FAF8F5",
+          100: "#F7F4EE",
+          200: "#EADBCE",
+          border: "#EADBCE",
+        },
+        burgundy: {
+          DEFAULT: "#6B1724",
+          light: "#821D2D",
+          dark: "#50101A",
+          50: "#FAF3F4",
+          100: "#F4E2E5",
+          200: "#E7C1C8",
+          700: "#6B1724",
+          800: "#50101A",
+        },
         forest: {
           DEFAULT: "#17352B",
           50: "#F2F6F4",
@@ -67,8 +85,8 @@ const config: Config = {
         },
       },
       fontFamily: {
-        serif: ["var(--font-serif)", "Newsreader", "Lora", "Georgia", "serif"],
-        sans: ["var(--font-sans)", "Inter", "system-ui", "sans-serif"],
+        serif: ["'Cormorant Garamond'", "'Cinzel'", "'Playfair Display'", "var(--font-serif)", "Newsreader", "Lora", "Georgia", "serif"],
+        sans: ["'Plus Jakarta Sans'", "var(--font-sans)", "Inter", "system-ui", "sans-serif"],
       },
       letterSpacing: {
         editorial: "0.08em",

@@ -5,7 +5,7 @@ import { Sparkles } from "lucide-react";
 
 export const KutipanBesar: React.FC = () => {
   return (
-    <section className="py-20 sm:py-28 bg-forest-900 text-ivory relative overflow-hidden border-y border-gold/30">
+    <section id="hikmah" className="py-20 sm:py-28 bg-forest-900 text-ivory relative overflow-hidden border-y border-gold/30">
       {/* Background paper texture effect for deep green */}
       <div className="absolute inset-0 paper-pattern-dark opacity-40 pointer-events-none" />
 
